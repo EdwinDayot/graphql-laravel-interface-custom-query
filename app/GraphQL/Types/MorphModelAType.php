@@ -21,11 +21,13 @@ class MorphModelAType extends GraphQLType
         $interface = GraphQL::type('morphable');
         $fields = $interface->getFields();
         return [
-            /*'statistics' => [
+            'statistics' => [
                 'query' => function (array $args, $query) {
+                    // Never called
+                    dd('test');
                     return $query;
                 }
-            ] + $fields['statistics']->config*/
+            ] + $fields['statistics']->config
         ] + $fields;
     }
 
